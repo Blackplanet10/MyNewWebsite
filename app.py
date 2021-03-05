@@ -34,6 +34,11 @@ def before_request():
         g.user = user
 
 
+
+@app.route('/')
+def index():
+    return redirect(url_for('login'))
+
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
